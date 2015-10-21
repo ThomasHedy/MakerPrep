@@ -62,13 +62,11 @@ reverser(recipe);
 var userNums = prompt("Please give me some numbers seperated by a space");
 var numArray = [];
 numArray = userNums.split(" ");
-console.log(numArray);
-var length = numArray.length;
 var largest = numArray[0];
 var smallest = numArray[0];
 var newArr = [];
 var biggestSmallest = function(){
-  for (var i = 1; i <= length; i++) {
+  for (var i = 1; i <= numArray.length; i++) {
     if (parseInt(numArray[i]) > largest) {
         largest = numArray[i];
         }
@@ -83,4 +81,31 @@ var biggestSmallest = function(){
 };
 biggestSmallest(numArray);
 
+// Excercise 6
+function arrayDuplicator (inputArray){
+  var outputArray = [];
+  outputArray = inputArray.slice();
+
+  return outputArray;
+}
+var original = [1, 2, 3, 4];
+var duplicated = arrayDuplicator(original);
+
+duplicated.pop();
+duplicated.pop();
+duplicated.pop();
+
+console.log(original, duplicated);
+
+//Exercise 7
+
+var frenemies = ['ada', 'will', 'bianca', 'abe', 'john', 'alice'];
+var startingAtIndex = 3;
+var numberToRemove = 2;
+
+// Notice that like pop() and unshift(), splices returns the values it removes
+var removedElements = frenemies.splice(startingAtIndex, numberToRemove);
+
+console.log("We took out ", removedElements);
+console.log("The remaining array ", frenemies);
 // //Excercise 10
